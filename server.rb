@@ -14,12 +14,24 @@ def get_articles
   articles
 end
 
+articles = get_articles
+
+def get_urls
+  urls = []
+  articles = get_articles
+  articles.each do |article|
+    urls << article[:url]
+  end
+  urls
+end
+
 def valid_title?(title)
   title != nil
 end
 
 def valid_url?(url)
-  url.include?("http://")
+  urls = get_urls
+  url.include?("http://") && !urls.include?(url)
 end
 
 def valid_description?(description)
