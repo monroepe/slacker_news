@@ -14,6 +14,27 @@ def get_articles
   articles
 end
 
+def valid_title?(title)
+  title != nil
+end
+
+def valid_url?(url)
+  url.include?("http://")
+end
+
+def valid_description?(description)
+  description.length > 20
+end
+
+def write_article(title, url, description)
+  CSV.open("articles.csv", "a") do |csv|
+    csv << [title, url, description]
+  end
+end
+
+def valid_input?(title, url, description)
+  (valid_title?(title) && valid_url?(url) && valid_description?(description))
+end
 
 
 get '/' do
@@ -29,11 +50,14 @@ end
 
 post '/submit' do
   articles = get_articles
-  title = params["title"]
-  url = params["url"]
-  description = params["description"]
-  CSV.open("articles.csv", "a") do |csv|
-    csv << [title, url, description]
-  end
-  redirect '/'
+  if valid_input?(params["title"], params["url"], params["description"])
+        title = params["title"]
+        url = params["url"]
+        description = params["description"]
+        write_article(title, url, description)
+        redirect '/'
+    else
+      erb :submit
+    end
+
 end
