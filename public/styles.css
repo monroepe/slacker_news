@@ -1,0 +1,122 @@
+
+body {
+  font-family:Verdana, Geneva, sans-serif;
+  color: #828282
+}
+
+h1 {
+  color: black;
+}
+
+li {
+  padding-bottom: 5px;
+}
+
+#header {
+  height: 24px;
+  width: 1074px;
+  font-size: 6pt;
+  background-color: #ff6600;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding-bottom: 7px;
+  padding-left: 3px;
+}
+
+#y_logo {
+  /*padding: .5px;*/
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 18px;
+  height: 18px;
+  border: 1px #ffffff solid;
+}
+
+#articles {
+  height: 450px;
+  width: 1074px;
+  background-color: #f6f6ef;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: -10px;
+  padding-top: .5px;
+  padding-bottom: 2px;
+}
+
+hr {
+  border-color: #ff6600;
+  width: 1072px;
+  margin-left: 80px;
+}
+
+li {
+  font-size: 10pt;
+}
+
+a {
+
+  text-decoration: none;
+}
+
+.comments:hover {
+  text-decoration: underline;
+}
+
+.comments:visited{
+  color: #828282;
+}
+
+.website {
+  font-size: .8em;
+}
+
+
+.link:link {
+    color: black;
+}
+
+.link:visited {
+    color: #828282;
+}
+
+.points_comments{
+  font-size: .8em;
+}
+
+.heading_stuff{
+  font-size: .8em;
+  font-weight: normal;
+}
+
+.footer{
+  background-color: #f6f6ef;
+  width: 924px;
+  height: 90px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: -7px;
+  color: black;
+  font-size: 8pt;
+  padding-left: 150px;
+  padding-top: 10px;
+}
+
+.search {
+  font-size: 10pt;
+  color: #828282;
+  padding-left: 200px;
+  padding-top: 10px;
+}
+
+.title_link:link{
+  color: black;
+}
+
+.title_link:visited{
+  color: black;
+}
+
+.comment_form{
+  margin-left: 40px;
+  margin-top: 30px;
+}
