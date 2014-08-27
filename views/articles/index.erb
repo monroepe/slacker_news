@@ -1,0 +1,10 @@
+<div id = "articles">
+
+  <ol>
+  <% @articles.each do |article| %>
+  <li><a href="<%= article['url'] %>" class = "link"><%= article['title'] %></a><span class = "website"> <%= article['url'] %> </span><br>
+  <span class = "points_comments"><%= article['description'] %></span></li>
+  <%end%>
+  </ol>
+
+</div>
