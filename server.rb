@@ -39,7 +39,18 @@ def valid_description?(description)
 end
 
 def valid_url?(url)
+  url = url_fixer(url)
+  query = 'SELECT articles.url FROM articles;'
+  urls = db_connection do |conn|
+    conn.exec(query)
+  end
 
+  urls.each do |hash|
+    if hash['url'] == (url)
+      return false
+    end
+  end
+  true
 end
 
 def write_article(title, url, description)
@@ -51,8 +62,8 @@ def write_article(title, url, description)
   end
 end
 
-def valid_input?(title, description)
-  (valid_title?(title) && valid_description?(description))
+def valid_input?(title, url, description)
+  (valid_title?(title) && valid_url?(url) && valid_description?(description))
 end
 
 get '/' do
@@ -74,8 +85,7 @@ get '/new' do
 end
 
 post '/new' do
-  articles = get_articles
-  if valid_input?(params["title"], params["description"])
+  if valid_input?(params["title"], params["url"], params["description"])
     title = params["title"]
     url = url_fixer(params["url"])
     description = params["description"]
