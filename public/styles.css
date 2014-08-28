@@ -33,7 +33,7 @@ li {
 }
 
 #articles {
-  height: 450px;
+  height: auto;
   width: 1074px;
   background-color: #f6f6ef;
   margin-left: 80px;

@@ -3,7 +3,7 @@
   <ol>
   <% @articles.each do |article| %>
   <li><a href="<%= article['url'] %>" class = "link"><%= article['title'] %></a><span class = "website"> <%= article['url'] %> </span><br>
-  <span class = "points_comments"><%= article['description'] %></span></li>
+  <span class = "points_comments"><%= article['description']%> | <a href="/articles/<%= article['id']%>/comments">Comment</a></span></li>
   <%end%>
   </ol>
 

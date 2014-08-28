@@ -1,0 +1,22 @@
+<div id = "articles">
+<br>
+<a href="<%= @article['url'] %>" class = "link"><%= @article['title'] %></a><span class = "website"> <%= @article['url'] %> </span><br>
+  <span class = "points_comments"><%= @article['description']%></span>
+  <br><br>
+
+<h1>Comments</h1>
+<ul>
+  <% @comments.each do |comment| %>
+  <li> <%= comment['username']%>: <%= comment['comment']%></li>
+  <%end%>
+</ul>
+<br><br>
+
+<form action= '/articles/<%= @article['id']%>/comments' method='post'>
+  Username: <input type='text' name='username' id='username' maxlength="50"/><br />
+  Comment:<br />
+  <textarea name='comment' id='comment' rows="6" cols="50" maxlength="2000"/></textarea><br />
+  <input type='submit' value='Submit' />
+</form>
+
+</div>
