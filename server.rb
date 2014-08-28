@@ -145,7 +145,7 @@ post '/articles/:article_id/comments' do
     username = params["username"]
     comment = params["comment"]
     write_comment(username, comment, id)
-    redirect '/articles'
+    redirect "/articles/#{params[:article_id]}/comments"
   else
     erb :'comments/index'
   end
